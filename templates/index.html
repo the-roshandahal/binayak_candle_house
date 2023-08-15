@@ -1,0 +1,153 @@
+<style>
+    /* Font-imports */
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* StyleSheet:Start */
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    overflow-y: hidden;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: url("https://i.postimg.cc/CxDvTmL2/cloth.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container{
+    height: 100vh;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+
+    backdrop-filter: blur(5px) brightness(80%);
+}
+
+.content{
+    margin: 30px 0px;
+}
+
+.company{
+    font-size: 0.8em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+}
+
+.title{
+    font-size: 5em;
+    font-family: 'Bacasime Antique', serif;
+    margin-bottom: 15px;
+}
+
+.discription{
+    font-size: 0.8em;
+    line-height: 17px;
+    width: 300px;
+    margin: 0 auto 40px;
+}
+
+.button button{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    font-weight: bolder;
+}
+
+.button button:hover{
+    background: #fff;
+    color: #000;
+    transition: 0.5s;
+}
+
+.icons{
+    margin-top: 50px;
+}
+
+.icons button{
+    background: transparent;
+    border: none;
+    width: 50px;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.icons button ion-icon{
+    padding: 10px;
+}
+
+.icons button:hover{
+    background: rgba(255, 255, 255,0.1);
+    transition: 0.5s;
+}
+/* StyleSheet:End */
+
+/* Responsiveness:Start */
+@media screen and (max-width: 480px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .company{
+        font-size: 0.6em;
+    }
+    .title{
+        font-size: 4em;
+    }
+    .discription{
+        font-size: 0.7em;
+    }
+}
+/* Responsiveness:End */
+</style>
+<section>
+    <div class="container">
+        <div class="content">
+            <div class="company">
+                <p>Binayak Candle</p>
+                <p>House</p>
+            </div>
+
+            <h1 class="title">Launching soon!</h1>
+
+            <div class="discription">
+                <!-- <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi a illum aliquid dolore. Corporis ipsa tempora dignissimos in reiciendis, ab inventore. Facilis, praesentium quasi!
+                </p> -->
+            </div>
+
+            <!-- <div class="button">
+                <button type="button">NOTIFY ME</button>
+            </div>
+
+            <div class="icons">
+                <button><ion-icon name="logo-facebook"></ion-icon></button>
+                <button><ion-icon name="logo-instagram"></ion-icon></button>
+                <button><ion-icon name="logo-twitter"></ion-icon></button>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- JS for icons:Start -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- JS for icons:End -->
