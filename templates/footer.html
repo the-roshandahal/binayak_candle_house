@@ -1,0 +1,119 @@
+{% load static %}
+        <!-- Footer Start -->
+        <footer>
+            <div class="footer-top bg-property theme-bg-2 pt-110 pb-80" data-background="assets/images/footer-1.png">
+                <div class="container custom-container-1">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget-1 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="footer-title">
+                                    <h4>Contact Us</h4>
+                                </div>
+                                <div class="footer-text">
+                                    <p>If you have any questions or need help, feel free to contact with our team.</p>
+                                </div>
+                                <div class="footer-info">
+                                    <a href="#"><i class="fas fa-phone-alt"></i>{{data.contact}}</a>
+                                </div>
+                                <div class="footer-info">
+                                    <a href="#"><i class="fas fa-envelope"></i>{{data.email}}</a>
+                                </div>
+                                <div class="footer-info">
+                                    <a href="#"><i class="fas fa-map-marker"></i>{{data.location}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-2 col-md-6 col-sm-12">
+                            <div class="footer-widget-2 wow fadeInUp" data-wow-delay=".5s">
+                                <div class="footer-title">
+                                    <h4>Quick Links</h4>
+                                </div>
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="{% url 'home' %}">About Us</a></li>
+                                        <li><a href="{% url 'home' %}">Our Products</a></li>
+                                        <li><a href="{% url 'home' %}">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget-4 wow fadeInUp" data-wow-delay=".9s">
+                                <div class="footer-title">
+                                    <h4>More</h4>
+                                </div>
+                                <div class="footer-text">
+                                    <p>Established since 2000. Mission Eland Landscaping Company in Nepal.</p>
+                                </div>
+                                <div class="footer-social mt-35">
+                                    <h5>Follow Us:</h5>
+                                    {% if data.facebook_url %}  
+                                    <a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a>
+                                    {% endif %}
+                                    {% if data.linkedin_url %}  
+                                    <a href="{{data.linkedin_url}}"><i class="fab fa-linkedin"></i></a>
+                                    {% endif %}
+                                    {% if data.instagram_url %}  
+                                    <a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a>
+                                    {% endif %}
+                                    {% if data.youtube_url %}  
+                                    <a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a>
+                                    {% endif %}
+                                </div>
+                                <div class="footer-text">
+                                    <p>© 2023 <a href="{% url 'home' %}">Binayak Candle House</a>. All right reserved.</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom theme-bg-1 pt-40 pb-30">
+                <div class="container custom-container-1">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class="copyright">
+                                <p>© 2023 <a href="{% url 'home' %}">Binayak Candle House</a>. All right reserved.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-xl-end text-lg-end text-md-end text-center">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="about.html">About Landi</a></li>
+                                    <li><a href="contact.html">Careers</a></li>
+                                    <li><a href="faq.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+
+    </main>
+
+    <!-- JS here -->
+    <script src="{% static 'assets/vendor/jquery/jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/meanmenu/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/slick/slick.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/rcounter/jquery.rcounter.js' %}"></script>
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.js' %}"></script>
+    <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/scrollUp/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/ajax-form/ajax-form.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/mailchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

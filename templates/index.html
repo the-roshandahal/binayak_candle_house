@@ -1,153 +1,138 @@
-<style>
-    /* Font-imports */
-@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+{% include "header.html" %} {% load static %}
 
-/* StyleSheet:Start */
-*{
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-}
 
-body{
-    overflow-y: hidden;
-}
-
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
-    background: url("https://i.postimg.cc/CxDvTmL2/cloth.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.container{
-    height: 100vh;
-    width: 400px;
-    padding: 10px;
-    text-align: center;
-
-    backdrop-filter: blur(5px) brightness(80%);
-}
-
-.content{
-    margin: 30px 0px;
-}
-
-.company{
-    font-size: 0.8em;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    margin-bottom: 50px;
-}
-
-.title{
-    font-size: 5em;
-    font-family: 'Bacasime Antique', serif;
-    margin-bottom: 15px;
-}
-
-.discription{
-    font-size: 0.8em;
-    line-height: 17px;
-    width: 300px;
-    margin: 0 auto 40px;
-}
-
-.button button{
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
-    background: transparent;
-    border: 2px solid #fff;
-    font-weight: bolder;
-}
-
-.button button:hover{
-    background: #fff;
-    color: #000;
-    transition: 0.5s;
-}
-
-.icons{
-    margin-top: 50px;
-}
-
-.icons button{
-    background: transparent;
-    border: none;
-    width: 50px;
-    font-size: 1.5em;
-    border-radius: 50%;
-}
-
-.icons button ion-icon{
-    padding: 10px;
-}
-
-.icons button:hover{
-    background: rgba(255, 255, 255,0.1);
-    transition: 0.5s;
-}
-/* StyleSheet:End */
-
-/* Responsiveness:Start */
-@media screen and (max-width: 480px) {
-    .container{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .company{
-        font-size: 0.6em;
-    }
-    .title{
-        font-size: 4em;
-    }
-    .discription{
-        font-size: 0.7em;
-    }
-}
-/* Responsiveness:End */
-</style>
-<section>
-    <div class="container">
-        <div class="content">
-            <div class="company">
-                <p>Binayak Candle</p>
-                <p>House</p>
+    <!-- Slider Start -->
+    <div class="hero-area height-800 bg-property d-flex align-items-center" data-overlay="black" data-opacity="7" data-background="{{home.header_image.url}}">
+        <div class="container custom-container-1">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                    <div class="hero-wrapper">
+                        
+                        <h1>{{home.header_heading}}</h1>
+                        <p>{{home.header_text}}</p>
+                        <a href="{{home.header_button_url}}" class="l-btn cmk-button cmk-rotate-right">{{home.header_button_text}}</a>
+                    </div>
+                </div>
             </div>
-
-            <h1 class="title">Launching soon!</h1>
-
-            <div class="discription">
-                <!-- <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eligendi a illum aliquid dolore. Corporis ipsa tempora dignissimos in reiciendis, ab inventore. Facilis, praesentium quasi!
-                </p> -->
-            </div>
-
-            <!-- <div class="button">
-                <button type="button">NOTIFY ME</button>
-            </div>
-
-            <div class="icons">
-                <button><ion-icon name="logo-facebook"></ion-icon></button>
-                <button><ion-icon name="logo-instagram"></ion-icon></button>
-                <button><ion-icon name="logo-twitter"></ion-icon></button>
-            </div> -->
         </div>
     </div>
-</section>
+    <!-- Slider End -->
+    <!-- About Start -->
+    <div class="about-area white-bg pt-105 pb-105">
+        <div class="container custom-container-1">
+            <div class="row d-flex align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="about-text-wrapper mb-30">
+                        <div class="section-title mr-30 mb-40 wow fadeInUp" data-wow-delay=".3s">
+                            <h2>{{home.about_title}}</h2>
+                            <p class="mt-3">{{home.about_text}}</p>
+                        </div>
+                        <a href="{% url 'home' %}" class="l-btn cmk-button cmk-rotate-right">More About Us ></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="about-wrapper-style-1 mb-30 wow fadeInUp" data-wow-delay=".5s">
+                        <img src="{{home.about_image.url}}" alt="About Us" style=" border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Services Start -->
+    <div class="service-area theme-bg-4 pt-110 pb-110">
+        <div class="container custom-container-1">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-70 wow fadeInUp" data-wow-delay=".3s">
+                        <span>Our Products</span>
+                        <h2>Why will you choose our <br> products?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-service wow fadeInUp" data-wow-delay=".3s">
+                        <div class="text-center mb-20" data-wow-delay=".3s">
+                            <img src="{{product.featured_image.url}}" alt="Service Icon" style="width:300px; border-radius: 10px;">
+                        </div>
+                        <h3>{{product.product_title}}</h3>
+                        <p>{{product.product_description|safe|truncatechars:100}}</p>
+                        <a href="service-details.html">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row mt-5">
+                <div class="section-title text-center mb-50 wow fadeInUp" data-wow-delay=".3s">
+                    <span>All Products <i class="fas fa-long-arrow-alt-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
 
-<!-- JS for icons:Start -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<!-- JS for icons:End -->
+    <!-- Testimonial Start -->
+    <div class="testimonial-area white-bg pb-110">
+        <div class="container custom-container-1">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-50 wow fadeInUp" data-wow-delay=".3s">
+                        <span>Our Gallery</span>
+                        <h2>Our Gallery</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testimonial-style-1">
+                    {% for gallery in gallery %}
+                      
+                    <div class="single-testimonial wow fadeInUp" data-wow-delay=".3s">
+                        <img src="{{gallery.image.url}}" alt="">
+                        <h3>{{gallery.title}}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Blog Start -->
+    <div class="blog-area theme-bg-4 pt-110 pb-110">
+        <div class="container custom-container-1">
+            <div class="row">
+                <div class="section-title text-center mb-70 wow fadeInUp" data-wow-delay=".3s">
+                    <span>Latest News & Blog</span>
+                    <h2>Articles daily updated latest articles <br> directly from the blog</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for blog in blogs %}
+                  
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-blog-wrapper pt-10 pr-10 pb-10 pl-10 mb-25 box-shadow-1 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="blog-img bg-hover-style-1">
+                            <img src="{{blog.image.url}}" alt="">
+                            <a href="blog-details.html"><i class="fas fa-plus"></i></a>
+                        </div>
+                        <div class="blog-content pt-10 pr-10 pb-10 pl-10">
+                            <h4><a href="blog-details.html">{{blog.title}}</a></h4>
+                            <ul class="post-meta mb-30">
+                                <li><a href="#">{{blog.created}}</a></li>
+                                <li><span>By</span> <a href="#">Admin</a></li>
+                            </ul>
+                            <a href="blog-details.html" class="l-read-more">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+{% include "footer.html" %}

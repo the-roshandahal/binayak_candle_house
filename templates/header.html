@@ -1,0 +1,83 @@
+{% load static %}{% include "nav_links.html" %}
+<body>
+
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="sk-bounce">
+            <div class="sk-bounce-dot"></div>
+            <div class="sk-bounce-dot"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Start -->
+    <header>
+        <div class="header-top pt-15 pb-15 theme-bg-1">
+            <div class="container custom-container-1">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-12">
+                        <div class="header-info">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-phone-alt"></i> Call on :
+                                    <a href="tel:+021157489">{{data.contact}}</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-clock"></i> Open Hours : {{data.opening_hours}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12">
+                        <div class="header-social text-xl-end text-lg-end text-md-center">
+                            {% if data.facebook_url %}  
+                            <a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if data.linkedin_url %}  
+                            <a href="{{data.linkedin_url}}"><i class="fab fa-linkedin"></i></a>
+                            {% endif %}
+                            {% if data.instagram_url %}  
+                            <a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a>
+                            {% endif %}
+                            {% if data.youtube_url %}  
+                            <a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-header" class="header-bottom">
+            <div class="container custom-container-1">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4">
+                        <div class="logo">
+                            <a href="{% url 'home' %}"><img src="{{data.company_logo.url}}" alt="logo" style="width:163px;"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 col-md-8">
+                        <div class="header-btn f-right">
+                            <a href="{% url 'home' %}"><img src="{% static 'assets/flag.gif' %}" alt="logo" style="height:60px;"></a>
+                        </div>
+                        <div class="main-menu text-center">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'home' %}">About Us</a></li>
+                                    <li><a href="{% url 'home' %}">Our Products</a></li>
+                                    <li><a href="{% url 'home' %}">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <main>
+        
