@@ -65,9 +65,11 @@
                 {% endfor %}
             </div>
             <div class="row mt-5">
-                <div class="section-title text-center mb-50 wow fadeInUp" data-wow-delay=".3s">
-                    <span>All Products <i class="fas fa-long-arrow-alt-right"></i></span>
-                </div>
+                <a href="{% url 'products' %}">
+                    <div class="section-title text-center mb-50 wow fadeInUp" data-wow-delay=".3s">
+                        <span>All Products <i class="fas fa-long-arrow-alt-right"></i></span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
