@@ -1,0 +1,44 @@
+{% include "header.html" %}
+<!-- Project Details Start -->
+<div class="project-details pt-110 pb-110">
+    <div class="container custom-container-1">
+        <div class="row">
+            {% if products %}
+              
+            <div class="col-xl-8 col-lg-12">
+                <div class="project-details-wrapper wow fadeInUp" data-wow-delay=".3s">
+                    <!-- <img src="{{product.featured_image.url}}" class="mb-30" alt="" style="height: 700px; width: 100%; object-fit: cover;"> -->
+                    <img src="{{product.featured_image.url}}" class="mb-30" alt="">
+                    <h2 class="mb-30">{{product.product_title}}</h2>
+                    <p>{{product.product_description|safe}}</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-12">
+                <div class="project-details-wrapper wow fadeInUp" data-wow-delay=".3s">
+                    <div class="widget service-list-widget mb-60 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <h3 class="widget-title">More Products</h3>
+                        <ul>
+                            {% for product in products %}
+                            <li><a href="{% url 'product_details' id=product.id %}">{{product.product_title}} <i class="fas fa-arrow-right"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-xl-12 col-lg-12">
+                <div class="project-details-wrapper wow fadeInUp" data-wow-delay=".3s">
+                    <!-- <img src="{{product.featured_image.url}}" class="mb-30" alt="" style="height: 700px; width: 100%; object-fit: cover;"> -->
+                    <img src="{{product.featured_image.url}}" class="mb-30" alt="">
+                    <h2 class="mb-30">{{product.product_title}}</h2>
+                    <p>{{product.product_description|safe}}</p>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+
+{% include "footer.html" %}

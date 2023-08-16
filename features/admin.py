@@ -17,10 +17,10 @@ admin.site.register(Gallery)
 admin.site.register(Contact)
 
 
-class BlogAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'created')
-    summernote_fields = ('blog',) 
-admin.site.register(Blog,BlogAdmin)
+# class BlogAdmin(SummernoteModelAdmin):
+#     list_display = ('title', 'created')
+#     summernote_fields = ('blog',) 
+# admin.site.register(Blog,BlogAdmin)
 
 
 class ReadOnlyModelAdmin(admin.ModelAdmin):

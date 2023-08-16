@@ -1,0 +1,46 @@
+{% include "header.html" %}
+ <!-- Contact Form Start -->
+ <div class="contact-area white-bg pt-110 pb-110">
+    <div class="container custom-container-1">
+        <div class="box-shadow-3 pt-60 pb-60 pl-80 pr-80 wow fadeInUp" data-wow-delay=".3s">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="contact-form pr-70">
+                        <div class="section-title mb-40">
+                            <h2>Send Us Message.</h2>
+                        </div>
+                        <form action="{% url 'contact' %}" method ="POST">
+                            {% csrf_token %}
+                            <input id="name" type="text" name="name" placeholder="Your Name">
+                            <input id="email" type="email" name="email" placeholder="Your Email">
+                            <input id="email" type="text" name="contact" placeholder="Your Contact">
+                            <input id="subject" type="text" name="subject" placeholder="Your Subject">
+                            <textarea id="message" name="message" placeholder="Write Message Here"></textarea>
+                            <button class="l-btn" type="submit">Send Message <i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="contact-box theme-bg-1 pt-60 pb-35 pl-35 pr-35 mr-40">
+                        <span>Gardening Excellence!</span>
+                        <h3>Handpoured In Nepal</h3>
+                        <p>Welcome to Binayak Candle House, where the art of illumination meets the essence of tranquility. We invite you to experience a world of captivating fragrances, mesmerizing flickers, and serene ambiance that only our carefully crafted candles can provide.</p>
+                        <ul class="mt-40">
+                            <li><i class="fas fa-headphones"></i><span>Phone: <a href="tel:{{data.contact}}">{{data.contact}}</a></span></li>
+                            <li><i class="fas fa-envelope-open"></i><span>Your Email: <a href="mailto:{{data.email}}">{{data.email}}</a></span></li>
+                            <li><i class="fas fa-map-marker-alt"></i><span>Location: {{data.location}}</span></li>
+                            <li><i class="fas fa-clock"></i><span>{{data.opening_hours}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Form End -->
+<!-- Map Start -->
+<div class="map-area wow fadeInUp" data-wow-delay=".3s">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7062.928947659844!2d85.36338870000003!3d27.7338164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1692183384760!5m2!1sen!2snp"></iframe>
+</div>
+<!-- Map End -->
+{% include "footer.html" %}
