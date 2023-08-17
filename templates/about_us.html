@@ -1,0 +1,93 @@
+{% include "header.html" %} {% load static %}
+<div class="about-block pt-110 pb-110">
+    <div class="container custom-container-1">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <h2>{{about.title}}</h2>
+                <p>{{about.title_description}}</p>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5 wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                <div class="hero-popup-content">
+                    <img src="{{about.title_image.url}}" alt="">
+                    {% if about.fet_video %}
+                      
+                    <a class="play-btn pulse-effect popup-video" href="{{about.fet_video}}"><i class="fas fa-play"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-area gray-bg-2 pt-110 pb-110">
+    <div class="container custom-container-1">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-title text-center mb-70 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <h2>{{about.sub_title}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 pl-50 pr-50">
+                <div class="about-img-style-2 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <img src="{{about.sub_image.url}}" alt="" style="max-width: 500px;">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about-text-wrapper wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <h4>Mission</h4>
+                        <p>{{about.mission}}</p>
+                    </div>
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <h4>Vision</h4>
+                        <p>{{about.vision}}</p>
+                    </div>
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                        <h4>Goal</h4>
+                        <p>{{about.goal}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="experience-area pt-110 pb-110">
+    <div class="container custom-container-1">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section-title text-center mb-70 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <h2>We Believe In</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <h4>{{believe.title_1}}</h4>
+                        <p>{{believe.text_1}}</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <h4>{{believe.title_2}}</h4>
+                        <p>{{believe.text_2}}</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-experience wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <h4>{{believe.title_3}}</h4>
+                        <p>{{believe.text_3}}</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}

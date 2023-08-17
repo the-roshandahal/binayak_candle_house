@@ -91,21 +91,40 @@ class Blog(models.Model):
     class Meta:
         verbose_name_plural = "06. Blogs" 
 
-# class AboutPageContent(models.Model):
-#     data_set = models.CharField(max_length=200)
+class AboutPageContent(models.Model):
+    data_set = models.CharField(max_length=200)
 
-#     title = models.CharField(max_length=150)
-#     title_description = models.TextField()
-#     title_image = models.ImageField(upload_to="about_images/", null=True, blank=True,verbose_name="Image (470*450)")
+    title = models.CharField(max_length=150)
+    title_description = models.TextField()
+    title_image = models.ImageField(upload_to="about_images/",verbose_name="Image (720*720)")
+    fet_video = models.URLField(null=True,blank=True)
 
+    sub_title = models.CharField(max_length=150)
+    sub_image = models.ImageField(upload_to="about_images/",verbose_name="Image (500*600)")
+    
+    mission = models.TextField()
+    vision = models.TextField()
+    goal = models.TextField()
 
-#     sub_title = models.CharField(max_length=150)
-#     sub_text = models.TextField()
+    def __str__(self):
+        return self.data_set
+    class Meta:
+        verbose_name_plural = "03.About Page Content" 
 
-#     mission = models.TextField()
-#     vision = models.TextField()
-#     goal = models.TextField()
-#     def __str__(self):
-#         return self.data_set
-#     class Meta:
-#         verbose_name_plural = "03.About Page Content" 
+class WeBelieveIn(models.Model):
+    data_set = models.CharField(max_length=200)
+
+    
+    title_1 = models.CharField(max_length=150)
+    text_1 = models.TextField()
+
+    title_2 = models.CharField(max_length=150)
+    text_2 = models.TextField()
+
+    title_3 = models.CharField(max_length=150)
+    text_3 = models.TextField()
+
+    def __str__(self):
+        return self.data_set
+    class Meta:
+        verbose_name_plural = "04.We Believe In" 

@@ -50,3 +50,20 @@ def contact(request):
     else:
         return render(request,'contact.html')
     
+
+def about_us(request):
+    try:
+        about = AboutPageContent.objects.all()[:1].get()
+    except:
+        about = None
+    try:
+        believe = WeBelieveIn.objects.all()[:1].get()
+    except:
+        believe = None
+
+    context = {
+        'about': about,
+        'believe':believe,
+    }
+    return render(request,'about_us.html',context)
+    

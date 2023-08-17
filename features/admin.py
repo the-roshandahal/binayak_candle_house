@@ -45,3 +45,11 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 class HomeContentAdmin(ReadOnlyModelAdmin):
     pass
 
+@admin.register(AboutPageContent)
+class AboutPageContentAdmin(ReadOnlyModelAdmin):
+    pass
+
+@admin.register(WeBelieveIn)
+class WeBelieveInAdmin(ReadOnlyModelAdmin):
+    pass
+
