@@ -11,13 +11,11 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     path("products", views.products, name="products"),
     path("product_details/<int:id>", views.product_details, name="product_details"),
-    # path("services", views.services, name="services"),
-    # path("service_details/<str:slug>", views.service_details, name="service_details"),
     
     path("about_us", views.about_us, name="about_us"),
 
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
