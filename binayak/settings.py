@@ -126,8 +126,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = "/media/"
-STATIC_ROOT = 'https://www.binayakcandlehouse.com/staticfiles'
-MEDIA_ROOT = 'https://www.binayakcandlehouse.com/media'
+STATIC_ROOT = 'binayakcandlehouse.com/staticfiles'
+MEDIA_ROOT = 'binayakcandlehouse.com/media'
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
