@@ -106,6 +106,8 @@ class AboutPageContent(models.Model):
     vision = models.TextField()
     goal = models.TextField()
 
+    out_story = models.TextField()
+
     def __str__(self):
         return self.data_set
     class Meta:

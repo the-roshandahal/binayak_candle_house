@@ -12,6 +12,8 @@ class ProductAdmin(SummernoteModelAdmin):
     list_display = ('product_title', 'created')
     summernote_fields = ('product_description',)
 
+
+
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Gallery)
 admin.site.register(Contact)
@@ -22,19 +24,22 @@ admin.site.register(Contact)
 #     summernote_fields = ('blog',) 
 # admin.site.register(Blog,BlogAdmin)
 
-
 class ReadOnlyModelAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
-        # Disable the "Add" button
-        return True
+        return False
     
     def has_change_permission(self, request, obj=None):
-        # Allow editing
         return True
     
     def has_delete_permission(self, request, obj=None):
-        # Disable the "Delete" button
         return False
+
+class AboutAdmin(SummernoteModelAdmin):
+    summernote_fields = ('our_story',) 
+
+@admin.register(AboutPageContent)
+class AboutPageContentAdmin(AboutAdmin, ReadOnlyModelAdmin):
+    pass
 
 @admin.register(CompanySetup)
 class CompanySetupAdmin(ReadOnlyModelAdmin):
@@ -43,10 +48,6 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 
 @admin.register(HomeContent)
 class HomeContentAdmin(ReadOnlyModelAdmin):
-    pass
-
-@admin.register(AboutPageContent)
-class AboutPageContentAdmin(ReadOnlyModelAdmin):
     pass
 
 @admin.register(WeBelieveIn)
